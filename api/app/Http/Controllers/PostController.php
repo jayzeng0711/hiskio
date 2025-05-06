@@ -13,6 +13,11 @@ class PostController extends Controller
         return Post::all();
     }
 
+    public function test()
+    {
+        return 123;
+    }
+
     public function show($id)
     {
         return Post::findOrFail($id);
