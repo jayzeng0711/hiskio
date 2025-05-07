@@ -19,7 +19,6 @@ jobs:
           echo "${{ secrets.GCP_SSH_KEY }}" > ~/.ssh/id_rsa
           chmod 700 ~/.ssh
           chmod 600 ~/.ssh/id_rsa
-          ssh-keyscan -H 35.229.224.154 >> ~/.ssh/known_hosts
 
 
       - name: Deploy via SSH
