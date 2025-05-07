@@ -23,11 +23,10 @@ jobs:
 
       - name: Deploy via SSH
         run: |
-          ssh -tt ${{ secrets.GCP_USER }}@${{ secrets.GCP_HOST }} << 'EOF'
-            cd /home/kobe830711/hiskio/api
-            git pull origin main
-            composer install --no-interaction --prefer-dist --optimize-autoloader
-            php artisan migrate --force
-            php artisan config:cache
-            php artisan route:cache
-          EOF
+          ssh -tt ${{ secrets.GCP_USER }}@${{ secrets.GCP_HOST }}
+          cd /home/kobe830711/hiskio/api
+          git pull origin main
+          composer install --no-interaction --prefer-dist --optimize-autoloader
+          php artisan migrate --force
+          php artisan config:cache
+          php artisan route:cache
