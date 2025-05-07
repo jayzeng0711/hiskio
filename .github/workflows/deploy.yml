@@ -19,11 +19,11 @@ jobs:
           echo "${{ secrets.GCP_SSH_KEY }}" > ~/.ssh/id_rsa
           chmod 700 ~/.ssh
           chmod 600 ~/.ssh/id_rsa
-          ssh-keyscan -H 35.229.224.154 >> ~/.ssh/known_hosts
+          ssh-keyscan -H ${{ secrets.GCP_HOST }} >> ~/.ssh/known_hosts
 
       - name: Deploy via SSH
         run: |
-          ssh -tt kobe830711@35.229.224.154 << 'EOF'
+          ssh -tt ${{ secrets.GCP_USER }}@${{ secrets.GCP_HOST }} << 'EOF'
             cd /home/kobe830711/hiskio/api
             git pull origin main
             composer install --no-interaction --prefer-dist --optimize-autoloader
