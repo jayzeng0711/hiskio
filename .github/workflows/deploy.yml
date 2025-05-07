@@ -1,4 +1,4 @@
-name: Deploy to GCP
+name: Deploy to GCPTEST
 
 on:
   push:
@@ -30,4 +30,4 @@ jobs:
             php artisan migrate --force
             php artisan config:cache
             php artisan route:cache
-            EOF
+          EOF
