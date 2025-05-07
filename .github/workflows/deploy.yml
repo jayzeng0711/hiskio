@@ -24,7 +24,7 @@ jobs:
       - name: Deploy via SSH
         run: |
           ssh -tt kobe830711@35.229.224.154 << 'EOF'
-            cd /home/kobe830711/hiskio
+            cd /home/kobe830711/hiskio/api
             git pull origin main
             composer install --no-interaction --prefer-dist --optimize-autoloader
             php artisan migrate --force
