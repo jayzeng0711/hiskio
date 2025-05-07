@@ -16,9 +16,9 @@ jobs:
       - name: Setup SSH
         run: |
           mkdir -p ~/.ssh
-          echo "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQC9LtVTnGsZdxUSc/CwfThT6ZvPNY8BmptLbtKGIq2Ed3DZB2wRFnwHNaB8ad9sl8nNCdXzz87m+AdzP9pahWdsa3IuqceRVa7e92SbA7syshcq2bkz9J9zYXysLaSE6xTLdmtGSemcPtGg6mwUD6hZbxdKyQY64uGRKEdfsxWZWUOAQKzqLrY0GBTV7fe4EZD40GC6UmeNMXWNsE2lRnSxit0aQAAXUS+B5THpiI8tLTW4rhiOhtHYYFL6SPn6Vmt6LSCBJQboM4dv4MVQkpgyF+jcfTnDcuY5ll1qLjZ37rkCdyOl65jJYP6GnMV53yDCsyWnX5Yu0i6jF8DrbgRwI6HNFbIaRMmL65pCt5qzdDE0aAVDOr7Ly6kqpd8z0IoEhht+agcbuLH8RyWPwleoFRNzuLUqVImq6i2Iuk4KRUWH/WtezcFdSLeIULs4Ru1UkQ485OTVUICTbpYS+Ss84eE5TYI1w6lwJXp7eOPKrjI4xeQF9suTNLcmmllGq0K8vdSg+o6+7lMDc+eiN3hAK5ZDV2xjDwrBjTA+0wBqGHIUQ3w7lbDMh7Qwf5yRl78UxqkpURBHMxjUBqVgde7bRLqfcXEoPSCpx4ihGairb9BbJODMdGQ5dD7z7eYJa7HGWymkxo6bVF+ye0cavJaApl/9mo9bdCHRSb2wrjaIJQ== github-actions" > ~/.ssh/authorized_keys
+          echo "${{ secrets.GCP_SSH_KEY }}" > ~/.ssh/id_rsa
           chmod 700 ~/.ssh
-          chmod 644 ~/.ssh/authorized_keys
+          chmod 644 ~/.ssh/id_rsa
           ssh-keyscan -H 35.229.224.154 >> ~/.ssh/known_hosts
 
 
