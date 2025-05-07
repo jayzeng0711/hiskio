@@ -11,6 +11,7 @@ class HomeController extends Controller
      */
     public function index()
     {
+        echo 111;exit;
         return view('home.welcome');
     }
 
